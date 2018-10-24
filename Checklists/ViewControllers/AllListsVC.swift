@@ -43,6 +43,7 @@ class AllListsVC: UITableViewController, ListDetailViewControllerDelegate, UINav
       cell.detailTextLabel!.text = "\(checklist.countUncheckedItems()) Remaining"
     }
     
+    cell.imageView!.image = UIImage(named: checklist.iconName)
     cell.accessoryType = .detailDisclosureButton
     
     return cell
