@@ -32,6 +32,17 @@ class AllListsVC: UITableViewController, ListDetailViewControllerDelegate, UINav
     
     let checklist = dataModel.lists[indexPath.row]
     cell.textLabel?.text = checklist.name
+    
+    if checklist.countUncheckedItems() == 0 {
+      if checklist.items.count == 0 {
+        cell.detailTextLabel?.text = "No Items"
+      } else {
+        cell.detailTextLabel?.text = "All Done!"
+      }
+    } else {
+      cell.detailTextLabel!.text = "\(checklist.countUncheckedItems()) Remaining"
+    }
+    
     cell.accessoryType = .detailDisclosureButton
     
     return cell
@@ -43,7 +54,7 @@ class AllListsVC: UITableViewController, ListDetailViewControllerDelegate, UINav
     if let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier){
       return cell
     } else {
-      return UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+      return UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
     }
   }
   
@@ -124,6 +135,10 @@ class AllListsVC: UITableViewController, ListDetailViewControllerDelegate, UINav
     if viewController === self {
       dataModel.indexOfSelectedChecklist = -1
     }
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    tableView.reloadData()
   }
   
   
