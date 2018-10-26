@@ -26,6 +26,5 @@ class Checklist: NSObject, Codable {
     }
     return count
   }
-  
 }
 
