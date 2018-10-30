@@ -84,14 +84,16 @@ class ListDetailViewController: UITableViewController, UITextFieldDelegate, Icon
 
 
   
+
+  
   func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-    
     let oldText = textField.text!
-    let stringRange = Range(range, in: oldText)!
-    let newText = oldText.replacingCharacters(in: stringRange, with: string)
-    print("begin")
-    doneBarButton.isEnabled = !(newText.isEmpty)
-    print("end")
+    let stringRange = Range(range, in:oldText)!
+    let newText = oldText.replacingCharacters(in: stringRange,
+                                              with: string)
+    
+    doneBarButton.isEnabled = !newText.isEmpty
+    
     return true
   }
   
