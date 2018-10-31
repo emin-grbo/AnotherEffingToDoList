@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Qf-dp-ieF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="8Qf-dp-ieF">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -265,9 +265,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bel-D7-yhJ">
-                                                    <rect key="frame" x="16" y="0.0" width="288" height="44"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Item Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bel-D7-yhJ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
@@ -277,6 +276,12 @@
                                                     </connections>
                                                 </textField>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Bel-D7-yhJ" firstAttribute="leading" secondItem="S8C-ja-j8L" secondAttribute="leading" id="BtM-w1-OPh"/>
+                                                <constraint firstItem="Bel-D7-yhJ" firstAttribute="top" secondItem="S8C-ja-j8L" secondAttribute="top" id="EVJ-Sd-CEo"/>
+                                                <constraint firstAttribute="trailing" secondItem="Bel-D7-yhJ" secondAttribute="trailing" id="KCm-f4-Voz"/>
+                                                <constraint firstAttribute="bottom" secondItem="Bel-D7-yhJ" secondAttribute="bottom" id="Rc3-GE-kxq"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -290,19 +295,24 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXS-Qo-m0m">
-                                                    <rect key="frame" x="16" y="11" width="86" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remind Me" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXS-Qo-m0m">
+                                                    <rect key="frame" x="24" y="11.5" width="229" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="a2A-fQ-blc">
                                                     <rect key="frame" x="253" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="shouldRemindToggled:" destination="WfV-b9-AlS" eventType="valueChanged" id="PQH-Ai-gKh"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="a2A-fQ-blc" firstAttribute="leading" secondItem="tXS-Qo-m0m" secondAttribute="trailing" id="8hs-8v-4Yq"/>
                                                 <constraint firstAttribute="trailing" secondItem="a2A-fQ-blc" secondAttribute="trailing" constant="18" id="Mkr-2a-aXx"/>
+                                                <constraint firstItem="tXS-Qo-m0m" firstAttribute="leading" secondItem="fJk-Zv-1S7" secondAttribute="leadingMargin" constant="8" id="O1N-lA-sNs"/>
+                                                <constraint firstItem="tXS-Qo-m0m" firstAttribute="centerY" secondItem="fJk-Zv-1S7" secondAttribute="centerY" id="TP4-QC-A3Z"/>
                                                 <constraint firstItem="a2A-fQ-blc" firstAttribute="top" secondItem="fJk-Zv-1S7" secondAttribute="top" constant="6" id="s7r-cs-ydr"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -373,6 +383,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="562614880.02370703">
                                     <!--2018-10-30 17:54:40 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="dateChanged:" destination="WfV-b9-AlS" eventType="valueChanged" id="ajQ-eH-3ad"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <constraints>
